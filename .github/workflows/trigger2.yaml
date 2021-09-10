@@ -1,0 +1,21 @@
+name: Trigger 2
+
+on:
+  workflow_run:
+    workflows:
+      - Trigger 2
+    types:
+      - completed
+
+jobs:
+  trigger2-job:
+    name: Trigger 2
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
+      - run: git branch
+      - run: echo "${GITHUB_CONTEXT}"
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}

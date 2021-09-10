@@ -1,0 +1,13 @@
+name: Main
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  main-job:
+    name: Main
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "start"
