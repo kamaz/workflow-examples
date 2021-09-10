@@ -3,7 +3,7 @@ name: Trigger 2
 on:
   workflow_run:
     workflows:
-      - Trigger 2
+      - Trigger 1
     types:
       - completed
 
