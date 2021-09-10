@@ -16,6 +16,4 @@ jobs:
         with:
           ref: ${{ github.event.workflow_run.head_branch }}
       - run: git branch
-      - run: echo "${GITHUB_CONTEXT}"
-        env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
+      - run: echo workflow
